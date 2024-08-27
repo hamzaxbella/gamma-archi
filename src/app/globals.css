@@ -2,32 +2,145 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* Firefox */
+* {
+  scrollbar-width: thin;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+::selection {
+  background-color: #FFD700; /* Background color (gold) */
+  color: #000000;            /* Text color (black) */
+}
+
+
+html {
+  scrollbar-color: #dcc9ae #ffffff00;
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+/* Scrollbar Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the scrollbar handle */
+  border-radius: 10px; /* Rounded corners of the scrollbar handle */
+  border: 2px solid transparent; /* Space around the handle */
+}
+
+/* Scrollbar Track Background */
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Color of the scrollbar track */
+  border-radius: 10px; /* Rounded corners of the scrollbar track */
+}
+
+/* Optional: Scrollbar Handle on Hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Darker color on hover */
+}
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/fonts/GeneralSans/GeneralSans-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/fonts/GeneralSans/GeneralSans-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/fonts/GeneralSans/GeneralSans-Semibold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/fonts/GeneralSans/GeneralSans-Light.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/fonts/GeneralSans/GeneralSans-ExtraLight.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+body,
+html {
+  font-family: "GeneralSans", sans-serif;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply bg-background text-text font-General relative overflow-x-hidden /* Apply default styles */;
+}
+
+body::after {
+  content: "";
+  opacity: 0.5;
+  position: fixed; /* Change to fixed to cover the entire viewport */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Use viewport width units */
+  height: 100vh; /* Use viewport height units */
+  pointer-events: none;
+  background-image: url("/images/noise.svg"); /* Ensure the path is correct */
+  background-size: cover; /* Adjust the size of the image */
+  z-index: 20;
+}
+
+@layer components {
+  .max-container {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  
+
+  .main-radius {
+    border-bottom-left-radius: 3rem; /* Rounded bottom-left corner */
+    border-bottom-right-radius: 3rem; /* Rounded bottom-right corner */
+  }
+  .section-spacing {
+    margin: 10rem 0;
+  }
+  .border-b-thin {
+    border-bottom: 0.1px rgba(255, 255, 255, 0.323) solid;
+  }
+  .border-t-thin {
+    border-top: 0.1px rgba(255, 255, 255, 0.323) solid;
+  }
+  .border-r-thin {
+    border-right: 0.1px rgba(255, 255, 255, 0.323) solid;
+  }
+  .border-l-thin {
+    border-left: 0.1px rgba(255, 255, 255, 0.323) solid;
+  }
+
+  .overlay-clip {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+  }
+
+  .link-clip {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .padding-y {
+    @apply py-16;
+  }
+  .padding-x {
+    @apply px-4 lg:px-20;
+  }
+  .margin-x {
+    @apply mx-4  lg:mx-20;
+  }
+  .input-styling {
+    @apply w-full px-4 outline-none capitalize placeholder-secondary h-12 bg-transparent ring-1 ring-secondary text-lg font-thin;
   }
 }
