@@ -1,12 +1,18 @@
-import ProjectGallery from '@/components/ProjectGallery'
-import React from 'react'
 
-export const page = () => {
+interface ServiceDetailProps {
+  params: {
+    serviceName: string;
+  };
+}
+
+
+const ServiceDetailPage = ({ params }: ServiceDetailProps) => {
+
   return (
     <main>
-      <section>
-        <ProjectGallery/>
-      </section>
+      
     </main>
-  )
-}
+  );
+};
+
+export default ServiceDetailPage;
