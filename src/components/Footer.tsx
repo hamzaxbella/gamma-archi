@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="bg-thirdly  overflow-hidden relative  h-[100vh] md:h-[110vh] lg:h-[80vh]"       style={{clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)"}}    >
       <div className="fixed -bottom-10 lg:-bottom-20 lg:left-0 h-[100vh] md:h-[110vh] lg:h-[80vh] w-full padding-x">
-      <div id="container" className=" w-full flex flex-col lg:flex-row gap-16 padding-y">
+      <div id="container" className=" w-full flex flex-col lg:flex-row gap-16 padding-y max-container">
         <div className="flex-1">
           <form action="" className="w-full flex flex-col gap-4">
             <input type="text" placeholder="name..." className="input-styling"/>

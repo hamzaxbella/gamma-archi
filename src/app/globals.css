@@ -8,13 +8,14 @@
 }
 
 ::selection {
-  background-color: #FFD700; /* Background color (gold) */
+  background-color: #dcc9ae; /* Background color (gold) */
   color: #000000;            /* Text color (black) */
 }
 
 
 html {
   scrollbar-color: #dcc9ae #ffffff00;
+  overflow: hidden;
 }
 
 /* Scrollbar Track */
@@ -96,7 +97,7 @@ body::after {
 
 @layer components {
   .max-container {
-    max-width: 1440px;
+    max-width: 1240px;
     margin: 0 auto;
   }
   
@@ -123,6 +124,11 @@ body::after {
 
   .overlay-clip {
     clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+  }
+
+  .text-holder {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    overflow: hidden;
   }
 
   .link-clip {

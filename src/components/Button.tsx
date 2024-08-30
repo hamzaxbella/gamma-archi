@@ -9,12 +9,13 @@ interface ButtonProps {
   path: string;
 }
 
-const Button = ({ label, src, primary, path }: ButtonProps) => {
+const Button = ({ label, src, primary, path  }: ButtonProps) => {
   return (
       <button
+      data-button
         className={
             primary
-            ? "bg-secondary hover:bg-thirdly   duration-300 text-lg font-extralight py-4  px-2 my-4 "
+            ? "bg-secondary opacity-0 hover:bg-thirdly   duration-300 text-lg font-extralight py-4  px-2 my-4 "
             : ""
         }
       >

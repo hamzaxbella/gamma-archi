@@ -12,6 +12,7 @@ const Header = () => {
   const [isActive, setIsActive] = useState(false);
   const container = useRef<HTMLElement | null>(null);
   const tl = useRef<gsap.core.Timeline | null>(null);
+  const timeline = useRef(gsap.timeline())
 
   const toggleMenu = () => {
     setIsActive(!isActive);
@@ -35,6 +36,10 @@ const Header = () => {
       })
   });
 
+  useGSAP(() => {
+    const tl = timeline.current
+  } , {})
+
   useEffect(() => {
     if (isActive) {
       tl.current!.play();
@@ -42,11 +47,12 @@ const Header = () => {
       tl.current!.reverse();
     }
   }, [isActive]);
+
   return (
-    <header className="relative " ref={container}>
+    <header className="relative h-[150px] padding-x lg:px-0" ref={container}>
       <Info />
 
-      <div className="flex justify-between mt-6 margin-x">
+      <div className="flex justify-between mt-6 max-container  ">
         <div>
           <Link href="/">
             <Image src={logo} alt="logo" />
@@ -74,7 +80,7 @@ const Header = () => {
       <div className="menu-overlay overflow-hidden w-[100vw] h-[100vh]  bg-thirdly fixed top-0 left-0 z-30 overlay-clip ">
       <Info />
 
-        <div className="flex  margin-x justify-between mt-6 margin-x">
+        <div className="flex  max-container padding-x lg:px-0 justify-between mt-6">
           <div>
             <Link href="/">
               <Image src={logo} className=" hidden"  alt="logo" />
@@ -82,7 +88,7 @@ const Header = () => {
           </div>
           <div
             id="menu"
-            className={`rounded-md    flex flex-col justify-center items-center w-[60px] h-[60px] transition-all duration-1000 cursor-pointer ${
+            className={`rounded-md  flex flex-col justify-center items-center w-[60px] h-[60px] transition-all duration-1000 cursor-pointer ${
               isActive ? "bg-background" : "bg-thirdly gap-2"
             }`}
             onClick={toggleMenu}
