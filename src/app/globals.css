@@ -15,7 +15,6 @@
 
 html {
   scrollbar-color: #dcc9ae #ffffff00;
-  overflow: hidden;
 }
 
 /* Scrollbar Track */
@@ -75,6 +74,8 @@ html {
 body,
 html {
   font-family: "GeneralSans", sans-serif;
+  overflow-x: hidden;
+
 }
 
 body {

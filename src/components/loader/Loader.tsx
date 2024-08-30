@@ -20,7 +20,7 @@ const Loader = ({timeline} : gsap.core.Timeline) => {
       return (
         <div
           style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
-          className=" overflow-hidden z-50 absolute top-0 left-0 w-[100vw] h-[100vh] bg-thirdly flex flex-col justify-center items-center gap-6"
+          className=" overflow-hidden z-30 fixed top-0 left-0 w-[100vw] h-[100vh] bg-thirdly flex flex-col justify-center items-center gap-6"
           ref={overlayRef}
         >
           <div>

@@ -12,7 +12,7 @@ const Header = () => {
   const [isActive, setIsActive] = useState(false);
   const container = useRef<HTMLElement | null>(null);
   const tl = useRef<gsap.core.Timeline | null>(null);
-  const timeline = useRef(gsap.timeline())
+  // const timeline = useRef(gsap.timeline())
 
   const toggleMenu = () => {
     setIsActive(!isActive);
@@ -36,9 +36,9 @@ const Header = () => {
       })
   });
 
-  useGSAP(() => {
-    const tl = timeline.current
-  } , {})
+  // useGSAP(() => {
+  //   const tl = timeline.current
+  // } , {})
 
   useEffect(() => {
     if (isActive) {
