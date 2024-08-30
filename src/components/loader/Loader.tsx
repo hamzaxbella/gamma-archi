@@ -2,8 +2,11 @@ import React, { useEffect, useRef } from "react";
 import { introAnimation , collapse } from "./animate";
 import gsap from "gsap";
 
+interface LoaderProps {
+  timeline? : gsap.core.Timeline | null
+}
 
-const Loader = ({timeline} : gsap.core.Timeline) => {
+const Loader = ({timeline} : LoaderProps) => {
 
     const overlayRef = useRef<HTMLDivElement>(null)
     const progressBarRef = useRef<HTMLDivElement>(null)
