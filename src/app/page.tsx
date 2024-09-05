@@ -12,7 +12,7 @@ const Page = () => {
     <main className="relative mt-10 padding-x w-full h-full">
         <section>
           <Hero />
-          <section className="h-[1000px]">
+          <section>
             <Introduction />
           </section>
           <section>

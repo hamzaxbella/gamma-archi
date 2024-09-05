@@ -93,7 +93,7 @@ body::after {
   pointer-events: none;
   background-image: url("/images/noise.svg"); /* Ensure the path is correct */
   background-size: cover; /* Adjust the size of the image */
-  z-index: 20;
+  z-index: -1;
 }
 
 @layer components {

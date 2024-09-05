@@ -16,7 +16,7 @@ const Hero = () => {
     () => {
       const tl = timeline.current;
 
-      tl.add(animateHero());
+      tl.add(animateHero() , '<');
     },
     { scope: heroRef }
   );
@@ -39,13 +39,13 @@ const Hero = () => {
       </div>
       <div
         id="container"
-        className="my-6 flex  flex-col lg:flex-row justify-between"
+        className="my-6  flex  flex-col lg:flex-row lg:items-center justify-between"
       >
         <div>
           <div>
             <div className="text-holder">
               <h1
-                className="content text-4xl lg:text-6xl lg:max-w-[20ch] font-General uppercase font-semibold lg:font-semibold"
+                className="content text-4xl tracking-wider lg:text-6xl lg:max-w-[20ch] font-General uppercase font-semibold lg:font-semibold"
                 data-title
               >
                 kara aya 
@@ -53,7 +53,7 @@ const Hero = () => {
             </div>
             <div className="text-holder">
               <h1
-                className="content text-4xl lg:text-6xl lg:max-w-[20ch] font-General uppercase font-semibold lg:font-semibold"
+                className="content text-4xl tracking-wider lg:text-6xl lg:max-w-[20ch] font-General uppercase font-semibold lg:font-semibold"
                 data-title
               >
                 architecture

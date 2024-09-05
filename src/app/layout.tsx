@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import "./globals.css";
 import Smoothscroll from "@/components/Smoothscroll";
 import { useState } from "react";

@@ -8,11 +8,12 @@ import { NavLinks } from "@/constants";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Info from "./Info";
+import { AnimateHeader } from "./animate";
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
-  const container = useRef<HTMLElement | null>(null);
+  const container = useRef<HTMLDivElement | null>(null);
   const tl = useRef<gsap.core.Timeline | null>(null);
-  // const timeline = useRef(gsap.timeline())
+  const timeline = useRef(gsap.timeline())
 
   const toggleMenu = () => {
     setIsActive(!isActive);
@@ -36,9 +37,11 @@ const Header = () => {
       })
   });
 
-  // useGSAP(() => {
-  //   const tl = timeline.current
-  // } , {})
+  useGSAP(() => {
+    const tl = timeline.current
+    tl.add(AnimateHeader())
+    
+  } , {scope : container})
 
   useEffect(() => {
     if (isActive) {
@@ -52,7 +55,7 @@ const Header = () => {
     <header className="relative h-[150px] padding-x lg:px-0" ref={container}>
       <Info />
 
-      <div className="flex justify-between mt-6 max-container  ">
+      <div className="flex justify-between mt-6 max-container  " data-container id="container">
         <div>
           <Link href="/">
             <Image src={logo} alt="logo" />

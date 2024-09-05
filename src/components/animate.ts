@@ -18,7 +18,7 @@ export const animateHero = () => {
         y: 24,
         alpha: 0,
       },
-      "<15%"
+      "<25%"
     )
     .from(
       "[data-services]",
@@ -33,16 +33,48 @@ export const animateHero = () => {
       {
         alpha: 1,
       },
-      "<40%"
+      "<15%"
     )
     .from(
       "[data-image]",
       {
-        alpha: 0,
-        duration: 10,
+        scale : 0.95,
+        autoAlpha: 0,
+        duration : 3
       },
-      "-=2.5"
+      "-=1.5"
     );
 
   return tl; // Return the timeline so it can be used elsewhere
 };
+
+
+export const AnimateHeader = () => {
+    const tl = gsap.timeline({
+        defaults: {
+            ease: "expo.out",
+            duration: 2.5, 
+            dealy : 2.5      }
+    })
+
+    tl.from('[data-container]' , {
+        autoAlpha : 0,
+    })
+
+    return tl
+}
+
+export const AnimateContact = () => {
+  const tl = gsap.timeline()
+
+  tl.from("[data-contact]" , {
+    autoAlpha : 0,
+    y : 15,
+    stagger : 0.15,
+    duration : 3,
+    ease : 'expo.out',
+    delay : 1
+  })
+
+  return tl
+}
