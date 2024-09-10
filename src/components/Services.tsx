@@ -1,3 +1,4 @@
+'use client'
 import React, { useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperClass } from "swiper"; // Import Swiper class for typing
