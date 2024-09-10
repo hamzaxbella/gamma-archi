@@ -9,7 +9,7 @@ import Services from "@/components/Services";
 const Page = () => {
 
   return (
-    <main className="relative mt-10 padding-x w-full h-full">
+    <main className="relative padding-x w-full h-full">
         <section>
           <Hero />
           <section>

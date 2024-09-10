@@ -54,11 +54,11 @@ export const AnimateHeader = () => {
         defaults: {
             ease: "expo.out",
             duration: 2.5, 
-            dealy : 2.5      }
+    }
     })
 
-    tl.from('[data-container]' , {
-        autoAlpha : 0,
+    tl.from('.fade' , {
+        opacity : 0,
     })
 
     return tl
@@ -67,14 +67,28 @@ export const AnimateHeader = () => {
 export const AnimateContact = () => {
   const tl = gsap.timeline()
 
-  tl.from("[data-contact]" , {
+  tl
+  .from("#contact-container" , {
+    autoAlpha : 0,
+    duration : 1,
+    ease : 'expo.out',
+    stagger : .25
+  })
+  .from("[data-contact]" , {
     autoAlpha : 0,
     y : 15,
     stagger : 0.15,
     duration : 3,
     ease : 'expo.out',
-    delay : 1
   })
 
   return tl
 }
+
+// export const AnimateAccordion = () => {
+//   const tl = gsap.timeline()
+
+//   tl.from("[data-accordion]" , {
+
+//   })
+// }

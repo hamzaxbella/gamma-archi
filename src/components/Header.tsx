@@ -14,6 +14,7 @@ const Header = () => {
   const container = useRef<HTMLDivElement | null>(null);
   const tl = useRef<gsap.core.Timeline | null>(null);
   const timeline = useRef(gsap.timeline())
+  const [isMenuSticky , setIsMenuSticky] = useState(false)
 
   const toggleMenu = () => {
     setIsActive(!isActive);
@@ -51,11 +52,24 @@ const Header = () => {
     }
   }, [isActive]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const shouldBeSticky = scrollPosition >= window.innerHeight;
+      setIsMenuSticky(shouldBeSticky);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  
   return (
-    <header className="relative h-[150px] padding-x lg:px-0" ref={container}>
+    <header className={` h-[150px] padding-x lg:px-0`} ref={container}>
       <Info />
 
-      <div className="flex justify-between mt-6 max-container  " data-container id="container">
+      <div className={`flex  mt-6 max-container ${isMenuSticky ? 'justify-end' : 'justify-between'} fade`}  >
         <div>
           <Link href="/">
             <Image src={logo} alt="logo" />
@@ -63,7 +77,7 @@ const Header = () => {
         </div>
         <div
           id="menu"
-          className={`rounded-md   flex flex-col justify-center items-center w-[60px] h-[60px] transition-all duration-1000 cursor-pointer ${
+          className={` ${isMenuSticky ? "fixed  z-30 " : "rounded-md"}  flex flex-col justify-center  items-center w-[60px] h-[60px]  rounded-lg cursor-pointer ${
             isActive ? "bg-background" : "bg-thirdly gap-2"
           }`}
           onClick={toggleMenu}
