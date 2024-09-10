@@ -1,4 +1,4 @@
-import { babtaza, chefchaouen, etable, index1, index2, lexus, martil, touabel } from "../../public/images";
+import { babtaza, chefchaouen, etable, index2, lexus, martil, touabel } from "../../public/images";
 
 export const NavLinks = [
     {name : "Accueil" , path : '/'},
@@ -37,7 +37,7 @@ export const HeroContent = {
  
 export const AllProjects = [
     {title : 'Mise en valeur des infrastructures d’accueil au site archéologique de Lixus à Larache' , image : lexus , category : 'État'},
-    {title : 'Salles de classes préscolaires à la commune de Tanger - Asillah et Fahs Anjra' , image : index1 , category : 'État'},
+    {title : 'Salles de classes préscolaires à la commune de Tanger - Asillah et Fahs Anjra' , image : index2 , category : 'État'},
     {title : 'Etable collective des vaches laitières à Had el Gharbia' , image : etable , category : 'État'},
     {title : 'CHEFCHAOUEN' , image : chefchaouen , category : 'Aminagement'},
     {title : 'TETOUAN TOUABEL' , image : touabel , category : 'Aminagement'},

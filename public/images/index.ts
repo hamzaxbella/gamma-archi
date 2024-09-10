@@ -6,9 +6,7 @@ import intro1 from "./intro1.webp"
 import intro2 from "./intro2.webp"
 import intro3 from "./intro3.webp"
 
-import index1 from './projectsImages/Mise en valeur des infrastructures d’accueil au site archéologique de Lixus à Larache/img1.jpg'
-
-import index2 from './projectsImages/Salles de classes préscolaires à la commune de Tanger - Asillah et Fahs Anjra/index.jpg'
+import index2 from './projectsImages/index.jpg'
 import lexus from './projectsImages/lexus.jpg'
 import administrative from './projectsImages/administrative.jpg'
 import babtaza from './projectsImages/babtaza.jpg'
@@ -24,7 +22,6 @@ export {
     intro1,
     intro2,
     intro3,
-    index1,
     index2,
     lexus,
     administrative,
