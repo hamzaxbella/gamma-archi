@@ -69,7 +69,7 @@ const Hero = () => {
           </p>
           <div
             data-services
-            className="content my-6 opacity-90 text-lg font-thin tracking-wider"
+            className="content my-6 opacity-90 text-lg font-extralight tracking-wider"
           >
             <span>Villas | </span>
             <span>Rénovation | </span>
@@ -90,7 +90,7 @@ const Hero = () => {
         {HeroContent.trust.map((sentence, index) => (
           <div data-trust-item className="flex gap-2" key={index}>
             <Image src={check} alt="check" width={20} height={20} />
-            <p className="font-thin">{sentence}</p>
+            <p className="font-extralight">{sentence}</p>
           </div>
         ))}
       </div>

@@ -55,31 +55,40 @@ html {
 @font-face {
   font-family: "GeneralSans";
   src: url("/fonts/GeneralSans/GeneralSans-Semibold.otf") format("opentype");
-  font-weight: 700;
+  font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "GeneralSans";
   src: url("/fonts/GeneralSans/GeneralSans-Light.otf") format("opentype");
-  font-weight: 200;
+  font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: "GeneralSans";
   src: url("/fonts/GeneralSans/GeneralSans-ExtraLight.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/fonts/GeneralSans/GeneralSans-Thin.otf") format("opentype");
   font-weight: 100;
   font-style: normal;
 }
+
+
 
 body,
 html {
   font-family: "GeneralSans", sans-serif;
   overflow-x: hidden;
 
+
 }
 
 body {
-  @apply bg-background text-text font-General relative overflow-x-hidden /* Apply default styles */;
+  @apply bg-background text-text relative overflow-x-hidden /* Apply default styles */;
 }
 
 body::after {
