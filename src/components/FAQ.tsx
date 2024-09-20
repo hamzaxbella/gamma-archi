@@ -1,3 +1,4 @@
+'use client'
 import React, { useRef } from "react";
 import Accordion from "./Accordion";
 import { FAQcontent } from "@/constants";

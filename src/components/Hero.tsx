@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect, useRef } from "react";
 import Button from "./Button";
 import Image from "next/image";
@@ -26,13 +27,13 @@ const Hero = () => {
       <div id="info" className="my-12 lg:hidden">
         <p
           data-contact
-          className="font-extralight tracking-wider opacity-60 font-General text-xl"
+          className="font-thin tracking-wider opacity-60 font-General text-xl"
         >
           karaayaarchitecture@gmail.com
         </p>
         <p
           data-contact
-          className="font-extralight tracking-wider opacity-60 font-General mt-2 text-xl"
+          className="font-thin tracking-wider opacity-60 font-General mt-2 text-xl"
         >
           05.39.93.54.39
         </p>
@@ -62,20 +63,20 @@ const Hero = () => {
           </div>
           <p
             data-description
-            className="content text-xl font-extralight my-6 opacity-90 max-w-[28ch] lg:max-w-[40ch] lg:text-lg"
+            className="content tracking-wider text-xl font-thin my-6 opacity-90 max-w-[28ch] lg:max-w-[40ch] lg:text-lg"
           >
             Concrétise vos projets d'architecture et de design intérieur avec
             expertise et passion
           </p>
           <div
             data-services
-            className="content my-6 opacity-90 text-lg font-extralight tracking-wider"
+            className="content my-6 opacity-90 text-lg font-thin tracking-wider"
           >
             <span>Villas | </span>
             <span>Rénovation | </span>
             <span>Interieur</span>
           </div>
-          <Button label="Consultation Gratuite" primary path="/quote" />
+          <Button label="Estimation Gratuite" primary path="/quote" />
         </div>
         <picture data-image>
           <source srcSet={desktopHero} media="(min-width: 786px)" />
@@ -90,7 +91,7 @@ const Hero = () => {
         {HeroContent.trust.map((sentence, index) => (
           <div data-trust-item className="flex gap-2" key={index}>
             <Image src={check} alt="check" width={20} height={20} />
-            <p className="font-extralight">{sentence}</p>
+            <p className="font-thin">{sentence}</p>
           </div>
         ))}
       </div>

@@ -19,7 +19,7 @@ html {
 
 /* Scrollbar Track */
 ::-webkit-scrollbar {
-  width: 12px; /* Width of the scrollbar */
+  width: 1px; /* Width of the scrollbar */
 }
 
 /* Scrollbar Handle */
@@ -88,7 +88,7 @@ html {
 }
 
 body {
-  @apply bg-background text-text relative overflow-x-hidden /* Apply default styles */;
+  @apply bg-background text-text overflow-x-hidden /* Apply default styles */;
 }
 
 body::after {
@@ -102,7 +102,7 @@ body::after {
   pointer-events: none;
   background-image: url("/images/noise.svg"); /* Ensure the path is correct */
   background-size: cover; /* Adjust the size of the image */
-  z-index: -1;
+  z-index: 0;
 }
 
 @layer components {

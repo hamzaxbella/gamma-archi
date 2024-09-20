@@ -1,4 +1,3 @@
-"use client";
 import FAQ from "@/components/FAQ";
 import Hero from "@/components/Hero";
 import Introduction from "@/components/Introduction";
@@ -9,14 +8,14 @@ import Services from "@/components/Services";
 const Page = () => {
 
   return (
-    <main className="relative padding-x w-full h-full">
+    <main className="relative padding-x z-20 w-full h-full">
         <section>
           <Hero />
           <section>
             <Introduction />
           </section>
           <section>
-            <Projects />
+            <Projects/>
           </section>
           <section>
             <Services />

@@ -14,7 +14,7 @@ const Introduction = () => {
               d'intérieur, et techniciens. <span className="text-secondary">”</span>
             </p>
             <div className=" h-[700px] bg-red-400" >
-            <Image src={intro1} alt="" className="object-cover w-full h-full z-50"  />
+            <Image src={intro1} alt="" className="object-cover w-full h-full"  />
             </div> 
           </div>
           <div className="flex-1 lg:block flex flex-col-reverse lg:flex-row">
