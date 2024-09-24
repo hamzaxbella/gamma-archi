@@ -37,3 +37,15 @@ export interface DynamicGalleryProps {
     }>;
   };
 }
+
+export interface FormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
+export interface InputProps {
+  label : string,
+  ico? : any,
+  textarea? : boolean
+}

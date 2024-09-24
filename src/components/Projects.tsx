@@ -2,8 +2,7 @@ import { CategoryTypes, ProjectCellTypes } from "@/lib/interfaces";
 import { client } from "@/lib/sanity";
 import ProjectsGrid from "./ProjectsGrid";
 
-export const revalidate = 30 // revalidate the data every 30 seconds
-
+export const revalidate = 0 // revalidate the data every 0 seconds
 
 async function getProjects() {
   const query = `

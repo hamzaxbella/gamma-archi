@@ -5,6 +5,10 @@ import Image from "next/image";
 import React from "react";
 import DynamicGallery from "@/components/DynamicGallery";
 import TruncatedText from "@/components/TruncatedText";
+
+export const revalidate = 0 // revalidate the data every 0 seconds
+
+
 // Fetch project data
 async function getProject(slug: string) {
   const query = `

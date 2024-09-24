@@ -141,6 +141,51 @@ body::after {
   .link-clip {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   }
+
+  input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Custom radio button style */
+  .custom-radio {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .custom-radio input[type="radio"] + span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #e2e8f0; /* Unchecked background */
+    border-radius: 50%;
+    border: 2px solid #4a5568; /* Border color */
+    position: relative;
+    transition: background-color 0.2s ease;
+  }
+  
+  .custom-radio input[type="radio"]:checked + span {
+    background-color: #B2955E; /* Checked background */
+    border-color: #B2955E;     /* Change border when checked */
+  }
+  
+  /* Custom inner circle when checked */
+  .custom-radio input[type="radio"]:checked + span::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: white; /* Color of the inner dot */
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  
+  
 }
 
 @layer utilities {

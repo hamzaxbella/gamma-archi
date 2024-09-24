@@ -4,7 +4,7 @@ import { avatar, lexus } from "../../public/images";
 import { shape } from "../../public/icons";
 const About = () => {
   return (
-    <section className="section-spacing ">
+    <section className="section-spacing max-container ">
       <div className="flex flex-col lg:flex-row gap-12 items-center bg-none">
         <div className="flex-1 flex ">
           <div className="max-h-[620px] max-w-[500px]">

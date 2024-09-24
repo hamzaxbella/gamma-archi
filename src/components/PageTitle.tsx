@@ -8,7 +8,7 @@ interface PageTitleProps {
 
 const PageTitle = ({ title, maxCharacter }: PageTitleProps) => {
   return (
-    <div className="flex items-center gap-6  lg:mt-24">
+    <div className="padding-x lg:px-0 flex items-center gap-6 max-container lg:mt-24">
       <h1
         className={` text-4xl lg:text-6xl font-semibold tracking-widest lg:whitespace-nowrap uppercase`}
         title={title}
