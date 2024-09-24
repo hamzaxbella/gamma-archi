@@ -6,7 +6,7 @@ import React from "react";
 import DynamicGallery from "@/components/DynamicGallery";
 import TruncatedText from "@/components/TruncatedText";
 
-export const revalidate = 0 // revalidate the data every 0 seconds
+export const revalidate = 30 // revalidate the data every 30 seconds
 
 
 // Fetch project data
@@ -22,6 +22,7 @@ async function getProject(slug: string) {
   const project = await client.fetch(query);
   return project;
 }
+
 
 export default async function ProjectDetailPage({
   params,
