@@ -63,7 +63,7 @@ const Services: React.FC = () => {
                       {service.description}
                     </p>
                     <Link
-                      href="/"
+                      href="/projects/"
                       className="text-lg font-thin hover:ring-0 px-4 py-2 ring-1 text-secondary hover:bg-secondary hover:text-white transition-all duration-200 tracking-wide ring-secondary rounded-full"
                     >
                       Découvrire {">"}

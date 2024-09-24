@@ -4,7 +4,8 @@ import { gsap } from "gsap";
 import Image from "next/image";
 import { ProjectsGridProps } from "@/lib/interfaces";
 import { urlFor } from "@/lib/sanity";
-
+import Link from "next/link";
+import { truncateText } from "@/lib/utils";
 
 const ProjectsGrid = ({
   isComponent,
@@ -59,12 +60,6 @@ const ProjectsGrid = ({
     }
   }, [filteredProjects]);
 
-  function truncateText(text: string, maxLength: number): string {
-    if (text.length > maxLength) {
-      return text.substring(0, maxLength) + '...';
-    }
-    return text;
-  }
   
 
   return (
@@ -88,7 +83,7 @@ const ProjectsGrid = ({
             </button>
           ))}
         </div>
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-4 items-start my-12">
+        <div className="grid grid-cols-1 gap-12 lg:gap-6 lg:grid-cols-4 items-start my-12">
           {filteredProjects.map((project, idx) => (
             <div
               key={`project-${idx}`}
@@ -97,9 +92,9 @@ const ProjectsGrid = ({
                 if (el) projectsRef.current[idx] = el;
               }}
             >
-              <div
-                className={`w-full ring-1 ring-secondary ${
-                  idx % 2 === 0 ? "h-[150px]" : "h-[350px]"
+              <Link href={`/projects/${project.currentSlug}`}
+                className={`w-full  overflow-hidden  ${
+                  idx % 2 === 0 ? "h-[190px]" : "h-[350px]"
                 } flex justify-center items-center`}
               >
                 <Image
@@ -107,9 +102,9 @@ const ProjectsGrid = ({
                   alt={project.title}
                   width={300}
                   height={300}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover hover:scale-110 transition-all ease-in-out duration-300"
                 />
-              </div>
+              </Link>
               <p className="tracking-wider text-2xl font-thin uppercase mt-4">
                 {`0${idx + 1}`}. {truncateText(project.title, 30)}
               </p>

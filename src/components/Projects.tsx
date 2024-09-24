@@ -30,17 +30,20 @@ async function getCategories() {
   return categories as CategoryTypes[]; // Cast to CategoryTypes[]
 }
 
-export default async function Projects() {
+interface projectsComponentProps {
+  isComponent? : boolean
+}
+export default async function Projects({isComponent} : projectsComponentProps) {
   const projects: ProjectCellTypes[] = await getProjects();
   const categories: CategoryTypes[] = await getCategories(); // Ensure it is CategoryTypes[]
 
   return (
-    <div>
+    <section className="padding-x lg:px-0 max-container">
       <ProjectsGrid
-        isComponent={true}
+        isComponent={isComponent}
         AllProjects={projects}
         AllCategories={categories}
       />
-    </div>
+    </section>
   );
 }

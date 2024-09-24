@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { avatar, index2, lexus } from "../../public/images";
+import { avatar, lexus } from "../../public/images";
 import { shape } from "../../public/icons";
 const About = () => {
   return (

@@ -116,9 +116,6 @@ body::after {
     border-bottom-left-radius: 3rem; /* Rounded bottom-left corner */
     border-bottom-right-radius: 3rem; /* Rounded bottom-right corner */
   }
-  .section-spacing {
-    margin: 10rem 0;
-  }
   .border-b-thin {
     border-bottom: 0.1px rgba(255, 255, 255, 0.323) solid;
   }
@@ -158,5 +155,8 @@ body::after {
   }
   .input-styling {
     @apply w-full px-4 outline-none capitalize placeholder-secondary h-12 bg-transparent ring-1 ring-secondary text-lg font-thin;
+  }
+  .section-spacing { 
+    @apply my-[5rem] lg:my-[10rem]
   }
 }

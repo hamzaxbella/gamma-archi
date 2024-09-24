@@ -15,7 +15,7 @@ const Page = () => {
             <Introduction />
           </section>
           <section>
-            <Projects/>
+            <Projects isComponent/>
           </section>
           <section>
             <Services />
