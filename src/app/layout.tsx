@@ -1,6 +1,6 @@
 "use client";
-import type { Metadata } from "next";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { metadata } from "./metadata"; // Import the metadata here
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import "./globals.css";
@@ -9,17 +9,13 @@ import { useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Loader from "@/components/loader/Loader";
-// export const metadata: Metadata = {
-//   title: "Kara aya architecture",
-//   description: "Atelier d'architecture a tangier, maroc",
-// };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+interface RootLayoutProps {
   children: React.ReactNode;
-}>) {
-  const [loaderFinished, setLoaderFinished] = useState(false);
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
+  const [loaderFinished, setLoaderFinished] = useState<boolean>(false);
   const [timeline, setTimeline] = useState<gsap.core.Timeline | null>(null);
 
   useGSAP(() => {
@@ -31,17 +27,22 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <title>{String(metadata.title ?? "Default Title")}</title> {/* Ensure it's a string */}
+        <meta name="description" content={String(metadata.description ?? "Default description")} /> {/* Ensure it's a string */}
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body>
-          {loaderFinished ? (
-        <main className="relative">
-              <Header />
-              <Smoothscroll>{children}</Smoothscroll>
-            <div className="bg-background -translate-y-1  w-full h-20 main-radius absolute left-0 z-20 " />
+        {loaderFinished ? (
+          <main className="relative">
+            <Header />
+            <Smoothscroll>{children}</Smoothscroll>
+            <section className="bg-background -translate-y-1 w-full h-20 main-radius absolute left-0 z-10" />
             <Footer />
-        </main>
-          ) : (
-            <Loader timeline={timeline} />
-          )}
+          </main>
+        ) : (
+          <Loader timeline={timeline} />
+        )}
       </body>
     </html>
   );

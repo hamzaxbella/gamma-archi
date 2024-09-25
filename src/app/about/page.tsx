@@ -12,7 +12,7 @@ const page = () => {
     
     
   return (
-    <main className="relative padding-x z-20 w-full h-full">
+    <main className="relative z-20 w-full h-full">
 
         <section>
             <PageTitle title={"Á PROPOS."} />

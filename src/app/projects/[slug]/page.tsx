@@ -30,9 +30,9 @@ export default async function ProjectDetailPage({
   const project: SingleProjectType = await getProject(params.slug);
 
   return (
-    <section className="relative z-10 max-container padding-x lg:px-0">
+    <section className="relative min-h-[1000px] z-10 max-container ">
       <PageTitle title={`${project.title}`} maxCharacter />
-      <div id="wrapper" className="section-spacing">
+      <div id="wrapper" className="padding-x lg:px-0 section-spacing">
         <div className="flex flex-col lg:flex-row gap-16   items-center">
           <div className="flex-1">
             <Image

@@ -1,26 +1,105 @@
-import React from "react";
+"use client";
+import React, { useState, useRef } from "react";
 import PageTitle from "./PageTitle";
-import Input from "./Input";
-import { calendar, email, location, money, phone } from "../../public/icons";
-
+import Input from "../components/Input";
+import { email, location, money, phone } from "../../public/icons";
+import emailjs from "@emailjs/browser";
 const QuoteForm = () => {
+  const form = useRef<HTMLFormElement | null>(null);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    projectType: "",
+    location: "",
+    projectSize: "",
+    budget: "",
+    dateOfStart: "",
+    comments: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (form.current) {
+      try {
+        const response = await emailjs.sendForm(
+          "service_pcdufpl",
+          "template_j4r7wwa",
+          form.current,
+          "tqwWb0TBJ_r5Y2cFV"
+        );
+        alert("Votre message a été envoyé!");
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          projectType: "",
+          location: "",
+          projectSize: "",
+          budget: "",
+          dateOfStart: "",
+          comments: "",
+        }); // Clear form
+      } catch (error: unknown) {
+        if (error instanceof Error) {
+          alert(`Votre message n'a pas pu être envoyé: (${error.message})`);
+        } else {
+          alert("Votre message n'a pas pu être envoyé: (Unknown error)");
+        }
+      }
+    }
+  };
+
   return (
-    <section className="padding-x lg:px-0 max-container">
+    <section className=" max-container">
       <PageTitle title="Demander un devis." />
-      <p className="text-xl mb-12 font-thin  leading-8 tracking-wider">
+      <p className="padding-x lg:px-0 text-xl my-6 font-thin  leading-8 tracking-wider">
         Remplissez le formulaire ci-dessous pour obtenir un devis personnalisé
         pour votre projet. Nous vous contacterons dans les plus brefs délais.
       </p>
-      <form action="" className="flex flex-col gap-6 py-24">
-        <div className="flex gap-6">
-          <Input label="Nom..." />
-          <Input label="Numéro de téléphone..." ico={phone} />
+      <form
+        onSubmit={handleSubmit}
+        ref={form}
+        action=""
+        className="padding-x lg:px-0 flex flex-col gap-6 py-24"
+      >
+        <div className="flex flex-col lg:flex-row gap-6">
+          <Input
+            label="Nom..."
+            name="name"
+            handleChange={handleChange}
+            value={formData.name}
+          />
+          <Input
+            label="Numéro de téléphone..."
+            name="phone"
+            handleChange={handleChange}
+            value={formData.phone}
+            type="number"
+            ico={phone}
+          />
         </div>
         <div>
-          <Input label="email..." ico={email} />
+          <Input
+            label="email..."
+            name="email"
+            value={formData.email}
+            handleChange={handleChange}
+            type="email"
+            ico={email}
+          />
         </div>
         <div>
-          <h3>Type de projet : </h3>
+          <h3 className="text-2xl mb-4">Type de projet : </h3>
           <div>
             <div className="custom-radio">
               <label
@@ -29,8 +108,9 @@ const QuoteForm = () => {
               >
                 <input
                   type="radio"
-                  name="stuff"
+                  name="projectType"
                   value="Résidentiel"
+                  onChange={handleChange}
                   id="résidentiel"
                   required
                 />
@@ -46,8 +126,9 @@ const QuoteForm = () => {
               >
                 <input
                   type="radio"
-                  name="stuff"
+                  name="projectType"
                   value="Commercial"
+                  onChange={handleChange}
                   id="commercial"
                 />
                 <span></span>
@@ -62,8 +143,9 @@ const QuoteForm = () => {
               >
                 <input
                   type="radio"
-                  name="stuff"
+                  name="projectType"
                   value="Rénovation"
+                  onChange={handleChange}
                   id="renovation"
                 />
                 <span></span>
@@ -78,8 +160,9 @@ const QuoteForm = () => {
               >
                 <input
                   type="radio"
-                  name="stuff"
+                  name="projectType"
                   value="Paysager"
+                  onChange={handleChange}
                   id="paysager"
                 />
                 <span></span>
@@ -94,8 +177,9 @@ const QuoteForm = () => {
               >
                 <input
                   type="radio"
-                  name="stuff"
+                  name="projectType"
                   value="Design d'intérieur"
+                  onChange={handleChange}
                   id="design-interieur"
                 />
                 <span></span>
@@ -110,8 +194,9 @@ const QuoteForm = () => {
               >
                 <input
                   type="radio"
-                  name="stuff"
+                  name="projectType"
                   value="Institutionnel"
+                  onChange={handleChange}
                   id="institutionnel"
                 />
                 <span></span>
@@ -126,8 +211,9 @@ const QuoteForm = () => {
               >
                 <input
                   type="radio"
-                  name="stuff"
+                  name="projectType"
                   value="Industriel"
+                  onChange={handleChange}
                   id="industriel"
                 />
                 <span></span>
@@ -140,25 +226,69 @@ const QuoteForm = () => {
                 htmlFor="autre"
                 className="flex gap-6 text-xl font-thin tracking-wider"
               >
-                <input type="radio" name="stuff" value="Autre" id="autre" />
+                <input
+                  type="radio"
+                  name="projectType"
+                  value="Autre"
+                  onChange={handleChange}
+                  id="autre"
+                />
                 <span></span>
                 <p>Autre</p>
               </label>
             </div>
           </div>
         </div>
-        <div className="flex gap-6">
-          <Input label="emplacement..." ico={location} />
-          <Input label="taille/Portée du projet" />
+
+        <div className="flex flex-col lg:flex-row gap-6">
+          <Input
+            handleChange={handleChange}
+            value={formData.location}
+            name="location"
+            label="emplacement..."
+            ico={location}
+          />
+          <Input
+            handleChange={handleChange}
+            value={formData.projectSize}
+            name="projectSize"
+            label="taille/Portée du projet"
+          />
         </div>
 
-        <div className="flex gap-6">
-          <Input label="Plage budgétair..." ico={money} />
-          <Input label="Date de début souhaitée..." ico={calendar}  />
+        <div className="flex flex-col lg:flex-row gap-6">
+          <Input
+            handleChange={handleChange}
+            value={formData.budget}
+            name="budget"
+            label="Plage budgétaire en DH..."
+            type="number"
+            ico={money}
+          />
+          <Input
+            handleChange={handleChange}
+            value={formData.dateOfStart}
+            name="dateOfStart"
+            label="Date de début souhaitée..."
+            type="date"
+          />
         </div>
+
         <div>
-          <Input label="Commentaires ou demandes spéciales..." textarea/>
+          <Input
+            handleChange={handleChange}
+            value={formData.comments}
+            name="comments"
+            label="Commentaires ou demandes spéciales..."
+            textarea
+          />
         </div>
+        <button
+          type="submit"
+          className="py-3 text-xl font-thin tracking-wider hover:bg-white hover:text-thirdly w-fit rounded-full px-12 ring-2 ring-white bg-transparent outline-none"
+        >
+          Submit
+        </button>
       </form>
     </section>
   );

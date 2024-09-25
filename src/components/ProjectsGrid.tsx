@@ -60,15 +60,15 @@ const ProjectsGrid = ({
     }
   }, [filteredProjects]);
 
-  
-
   return (
-    <section className="w-full text-center max-container">
+    <section className="relative w-full text-center max-container">
       {isComponent && (
         <h1 className="text-2xl lg:text-4xl uppercase my-6 font-bold tracking-wider">
           nos résalisations
         </h1>
       )}
+      <div className="absolute margin-x -right-24 z-10 bottom-1/4  w-24 h-24 bg-effect blur-3xl" />
+
       <div className="container">
         <div className="buttons-container mb-24 grid grid-cols-2 lg:flex gap-6 justify-center max-container margin-x">
           {filters.map((filter, idx) => (
@@ -83,7 +83,7 @@ const ProjectsGrid = ({
             </button>
           ))}
         </div>
-        <div className="grid grid-cols-1 gap-12 lg:gap-6 lg:grid-cols-4 items-start my-12">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:gap-6 lg:grid-cols-4 items-start my-12">
           {filteredProjects.map((project, idx) => (
             <div
               key={`project-${idx}`}
@@ -92,7 +92,8 @@ const ProjectsGrid = ({
                 if (el) projectsRef.current[idx] = el;
               }}
             >
-              <Link href={`/projects/${project.currentSlug}`}
+              <Link
+                href={`/projects/${project.currentSlug}`}
                 className={`w-full  overflow-hidden  ${
                   idx % 2 === 0 ? "h-[190px]" : "h-[350px]"
                 } flex justify-center items-center`}

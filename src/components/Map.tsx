@@ -2,7 +2,7 @@ import React from "react";
 
 const Map = () => {
   return (
-    <section className="max-container  mt-44 mb-10">
+    <section className="padding-x lg:px-0 max-container  mt-44 mb-10">
       <div className="text-center flex flex-col items-center">
         <h1 className="text-2xl lg:text-4xl uppercase my-6 font-bold tracking-widest">
           parlons-en!

@@ -199,7 +199,7 @@ body::after {
     @apply mx-4  lg:mx-20;
   }
   .input-styling {
-    @apply w-full px-4 outline-none capitalize placeholder-secondary h-12 bg-transparent ring-1 ring-secondary text-lg font-thin;
+    @apply w-full px-4 outline-none placeholder-secondary h-12 bg-transparent ring-1 ring-secondary text-lg font-thin;
   }
   .section-spacing { 
     @apply my-[5rem] lg:my-[10rem]

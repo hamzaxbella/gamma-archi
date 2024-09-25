@@ -68,7 +68,7 @@ export const AnimateContact = () => {
   const tl = gsap.timeline()
 
   tl
-  .from("#contact-container" , {
+  .from("#info" , {
     autoAlpha : 0,
     duration : 1,
     ease : 'expo.out',
@@ -84,11 +84,3 @@ export const AnimateContact = () => {
 
   return tl
 }
-
-// export const AnimateAccordion = () => {
-//   const tl = gsap.timeline()
-
-//   tl.from("[data-accordion]" , {
-
-//   })
-// }

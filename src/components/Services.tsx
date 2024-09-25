@@ -15,7 +15,7 @@ const Services: React.FC = () => {
   const handleMouseUp = () => setIsGrabbing(false);    // On mouse up, reset grabbing
 
   return (
-    <section className="w-full section-spacing">
+    <section className="padding-x w-full section-spacing">
       <div className="text-center flex flex-col items-center">
         <h1 className="text-2xl lg:text-4xl uppercase my-6 font-bold tracking-widest">
           nos services
@@ -38,6 +38,11 @@ const Services: React.FC = () => {
             // When the window width is >= 320px (mobile)
             320: {
               slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            // When the window width is >= 768px (tablet/desktop)
+            500: {
+              slidesPerView: 2,
               spaceBetween: 20,
             },
             // When the window width is >= 768px (tablet/desktop)

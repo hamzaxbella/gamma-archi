@@ -30,7 +30,7 @@ const FAQ = () => {
 
   
   return (
-    <section ref={FAQref} className="w-full max-container">
+    <section ref={FAQref} className="relative padding-x lg:px-0 w-full max-container">
       <div className="text-center flex flex-col items-center">
         <h1 className="text-2xl lg:text-4xl uppercase my-6 font-bold tracking-widest">
           faq
@@ -47,6 +47,7 @@ const FAQ = () => {
         ))
       }
       </div>
+
     </section>
   );
 };

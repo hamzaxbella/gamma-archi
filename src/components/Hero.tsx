@@ -23,8 +23,8 @@ const Hero = () => {
   );
 
   return (
-    <section className="relative max-container" ref={heroRef}>
-      <div id="info" className="my-12 lg:hidden">
+    <section className="padding-x lg:px-0 relative max-container" ref={heroRef}>
+      <div id="info" className="my-12 md:hidden">
         <p
           data-contact
           className="font-thin tracking-wider opacity-60 font-General text-xl"
@@ -40,7 +40,7 @@ const Hero = () => {
       </div>
       <div
         id="container"
-        className="my-6  flex  flex-col lg:flex-row lg:items-center justify-between"
+        className="my-6  flex  flex-col md:flex-row lg:items-center justify-between"
       >
         <div>
           <div>
@@ -78,14 +78,11 @@ const Hero = () => {
           </div>
           <Button label="Estimation Gratuite" primary path="/quote" />
         </div>
-        <picture data-image>
-          <source srcSet={desktopHero} media="(min-width: 786px)" />
           <Image
-            className="w-[100em] lg:w-[30em]"
+            className="w-[100em] md:w-[25em] lg:w-[30em]"
             src={mobileHero}
             alt="hero image"
           />
-        </picture>
       </div>
       <div className="hidden lg:flex w-full justify-between">
         {HeroContent.trust.map((sentence, index) => (

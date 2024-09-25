@@ -4,8 +4,10 @@ import { avatar, lexus } from "../../public/images";
 import { shape } from "../../public/icons";
 const About = () => {
   return (
-    <section className="section-spacing max-container ">
-      <div className="flex flex-col lg:flex-row gap-12 items-center bg-none">
+    <section className="relative padding-x lg:px-0 section-spacing max-container ">
+      <div className="relative flex flex-col lg:flex-row gap-12 items-center bg-none">
+      <div className="absolute margin-x -right-40 z-10 top-1/2  w-24 h-24 bg-effect blur-3xl" />
+
         <div className="flex-1 flex ">
           <div className="max-h-[620px] max-w-[500px]">
             <Image
@@ -15,7 +17,9 @@ const About = () => {
             />
           </div>
         </div>
-        <div className="flex-1">
+        <div className="relative flex-1">
+        <Image src={shape} className="absolute top-[-50px] right-[-150px] opacity-25" width={400} height={400} alt="texture" />
+
           <h3 className="text-2xl leading-10 font-bold uppercase">
             KAA - KARA AYA ARCHITECTURE
           </h3>
@@ -27,7 +31,9 @@ const About = () => {
           </p>
         </div>
       </div>
-      <div className="flex flex-col-reverse lg:flex-row items-center gap-12 my-24">
+      <div className="relative flex flex-col-reverse lg:flex-row items-center gap-12 my-24">
+      <div className="absolute margin-x -left-40 z-10 top-12  w-20 h-20 bg-effect blur-3xl" />
+
         <div className="flex-1">
           <p className="text-2xl tracking-wider leading-loose font-thin">
             Chez Kara Aya Architecture, nous nous engageons à concevoir des
@@ -53,6 +59,8 @@ const About = () => {
           rendent la vie meilleure.
         </p>
       </div>
+      <div className="absolute margin-x -right-40 z-10 -bottom-24  w-20 h-20 bg-effect blur-3xl" />
+
     </section>
   );
 };

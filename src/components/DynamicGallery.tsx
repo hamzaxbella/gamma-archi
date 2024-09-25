@@ -55,7 +55,7 @@ const DynamicGallery = ({ project }: DynamicGalleryProps) => {
   const rowSizes = getRowSizes(galleryImages.length);
 
   return (
-    <div className="gallery-grid mt-10">
+    <div className="relative gallery-grid mt-10">
       <LightGallery
         onInit={() => console.log("LightGallery has been initialized")}
         speed={500}
@@ -69,10 +69,20 @@ const DynamicGallery = ({ project }: DynamicGalleryProps) => {
               rowSize === 1
                 ? "lg:grid-cols-1"
                 : rowSize === 2
-                ? "lg:grid-cols-2"
-                : "lg:grid-cols-3"
+                  ? "lg:grid-cols-2"
+                  : "lg:grid-cols-3"
             }`}
           >
+            <div
+              className={`absolute margin-x ${
+                rowSize === 1
+                  ? "-right-24 top-24"
+                  : rowSize === 2
+                    ? "-left-24 bottom-24"
+                    : "-right-24"
+              } z-[-1] bottom-1/4  w-24 h-24 bg-effect blur-3xl`}
+            />
+
             {galleryImages
               .slice(
                 rowSizes.slice(0, rowIndex).reduce((acc, val) => acc + val, 0),
@@ -114,11 +124,7 @@ const GalleryImage: React.FC<GalleryImageProps> = ({ image, imgIndex }) => {
         className={`w-full max-h-[600px] min-h-[600px] object-cover transition-opacity duration-300 ${
           isLoading ? "opacity-0" : "opacity-100"
         }`}
-        src={urlFor(image)
-          .width(1200)
-          .quality(90)
-          .auto("format")
-          .url()}
+        src={urlFor(image).width(1200).quality(90).auto("format").url()}
         alt={`Gallery image ${imgIndex + 1}`}
         width={400}
         height={400}

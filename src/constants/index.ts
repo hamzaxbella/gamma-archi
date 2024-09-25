@@ -10,15 +10,15 @@ export const NavLinks = [
 export const socialLinks = [
     {
       label: "Instagram",
-      path: "",
+      path: "https://www.instagram.com/kaa.architecture/",
     },
     {
       label: "Linked In",
-      path: "",
+      path: "https://www.linkedin.com/in/aya-soufi-07477a10a/",
     },
     {
       label: "Facebook",
-      path: "",
+      path: "https://www.facebook.com/kaa.Architecture",
     },
 ];
   

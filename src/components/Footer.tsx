@@ -97,7 +97,7 @@ const Footer: React.FC = () => {
             <ul className="mt-6">
               {socialLinks.map((link, index) => (
                 <div key={index} className="flex gap-2 hover:gap-4 transition-all duration-200 items-center">
-                  <a href={link.path} className="text-lg uppercase font-semibold text-secondary">{link.label}</a>
+                  <a href={link.path} target="_blank" className="text-lg uppercase font-semibold text-secondary">{link.label}</a>
                   <Image src={top_arrow} alt="link" width={15} height={25} />
                 </div>
               ))}
@@ -106,7 +106,7 @@ const Footer: React.FC = () => {
               <div className="flex-1">
                 <span className="text-sm text-secondary font-thin">made with 🤍 by </span>
                 <h3 className="font-bold capitalize text-secondary text-2xl">
-                  <a href="">zyllux digital</a>
+                  <a href="https://www.instagram.com/zyllux_digital/" target="_blank">zyllux digital</a>
                 </h3>
               </div>
               <a className="font-light text-lg uppercase text-secondary" href="#">Retour en haut</a>

@@ -5,10 +5,13 @@ import Map from "@/components/Map";
 import Projects from "@/components/Projects";
 import Services from "@/components/Services";
 
+export const revalidate = 30 // revalidate the data every 30 seconds
+
+
 const Page = () => {
 
   return (
-    <main className="relative padding-x z-20 w-full h-full">
+    <main className="relative  z-20 w-full h-full">
         <section>
           <Hero />
           <section>
@@ -23,6 +26,8 @@ const Page = () => {
           <section>
             <FAQ />
           </section>
+          <div className="absolute margin-x -right-24 z-10 bottom-1/4  w-24 h-24 bg-effect blur-3xl" />
+
           <section>
             <Map />
           </section>
