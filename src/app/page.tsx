@@ -1,3 +1,4 @@
+import CustomCursor from "@/components/customCursor/CustomCursor";
 import FAQ from "@/components/FAQ";
 import Hero from "@/components/Hero";
 import Introduction from "@/components/Introduction";

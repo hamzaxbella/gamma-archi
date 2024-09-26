@@ -93,8 +93,9 @@ const ProjectsGrid = ({
               }}
             >
               <Link
+                scroll={true}
                 href={`/projects/${project.currentSlug}`}
-                className={`w-full  overflow-hidden  ${
+                className={`w-full  overflow-hidden important  ${
                   idx % 2 === 0 ? "h-[190px]" : "h-[350px]"
                 } flex justify-center items-center`}
               >

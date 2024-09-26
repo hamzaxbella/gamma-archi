@@ -5,7 +5,8 @@ import Image from "next/image";
 import React from "react";
 import DynamicGallery from "@/components/DynamicGallery";
 import TruncatedText from "@/components/TruncatedText";
-
+import ScrollRestoration from '@/components/ScrollRestoration'
+import { title } from "process";
 export const revalidate = 30 // revalidate the data every 30 seconds
 
 
@@ -23,6 +24,23 @@ async function getProject(slug: string) {
   return project;
 }
 
+export async function generateMetadata({params : {slug} }: ProjectDetailProps) {
+  const project = await getProject(slug)
+  if(!project) {
+    return {
+      title : "Not Found",
+      description : "Not Found"
+    }
+  }
+  return {
+    title : project.title,
+    description : project.description,
+    alternates : {
+      canonical : `/projects/${slug}`
+    }
+  }
+}
+
 
 export default async function ProjectDetailPage({
   params,
@@ -31,6 +49,7 @@ export default async function ProjectDetailPage({
 
   return (
     <section className="relative min-h-[1000px] z-10 max-container ">
+      <ScrollRestoration />
       <PageTitle title={`${project.title}`} maxCharacter />
       <div id="wrapper" className="padding-x lg:px-0 section-spacing">
         <div className="flex flex-col lg:flex-row gap-16   items-center">

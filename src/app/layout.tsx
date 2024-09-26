@@ -9,6 +9,7 @@ import { useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Loader from "@/components/loader/Loader";
+import CustomCursor from "@/components/customCursor/CustomCursor";
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -39,6 +40,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <Smoothscroll>{children}</Smoothscroll>
             <section className="bg-background -translate-y-1 w-full h-20 main-radius absolute left-0 z-10" />
             <Footer />
+            <CustomCursor />
           </main>
         ) : (
           <Loader timeline={timeline} />

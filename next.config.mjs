@@ -5,6 +5,10 @@ const nextConfig = {
       { protocol: "https", hostname: "cdn.sanity.io", port: "" },
     ],
   },
+  experimental: {
+    scrollRestoration: true,
+  },
+
 };
 
 export default nextConfig;

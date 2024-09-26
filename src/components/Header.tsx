@@ -77,7 +77,7 @@ const Header = () => {
         </div>
         <div
           id="menu"
-          className={` ${isMenuSticky ? "fixed  z-30 " : "rounded-md"}  flex flex-col justify-center  items-center w-[60px] h-[60px]  rounded-lg cursor-pointer ${
+          className={` ${isMenuSticky ? "fixed  z-30 " : "rounded-md"} important flex flex-col justify-center  items-center w-[60px] h-[60px]  rounded-lg cursor-pointer ${
             isActive ? "bg-background" : "bg-thirdly gap-2"
           }`}
           onClick={toggleMenu}

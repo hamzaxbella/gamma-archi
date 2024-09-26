@@ -83,7 +83,7 @@ body,
 html {
   font-family: "GeneralSans", sans-serif;
   overflow-x: hidden;
-
+  cursor: none
 
 }
 
@@ -183,7 +183,34 @@ body::after {
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  
+
+/* Main cursor */
+.cursor {
+  width: 10px;
+  height: 10px;
+  background-color: orange;
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 10000;
+  transition: transform 0.1s ease; /* Fast for real-time following */
+}
+
+/* Follower cursor */
+.follower {
+  width: 30px;
+  height: 30px;
+  border: 2px solid orange;
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.3s ease; /* Slower for trailing effect */
+  opacity: 0.7;
+}
+
   
   
 }
