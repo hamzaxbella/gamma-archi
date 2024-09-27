@@ -1,10 +1,20 @@
-// app/metadata.js
-import type { Metadata } from "next";
+// app/metadata.ts
+import type { Metadata } from "next"; // Use Metadata type from Next.js
 
 export const metadata: Metadata = {
-  metadataBase : new URL('http://localhost:3000'),
   title: "Kara Aya Architecture",
-  description: "Atelier d'architecture à Tangier, Maroc. Offering comprehensive architecture services including urban planning, scenography, interior design, and project management assistance.",
+  description: "Atelier d'architecture à Tangier, Maroc...",
+  icons: [
+    {
+      media: "(prefers-color-scheme: light)",
+      url: "./icondark.ico", // Use `url` instead of `href`
+    },
+    {
+      media: "(prefers-color-scheme: dark)",
+      url: "./iconlight.ico",
+    },
+  ],
+  metadataBase: new URL("http://localhost:3000"),
   keywords: [
     "Architecture Tangier", 
     "Architecture à Tanger", 
@@ -60,5 +70,4 @@ export const metadata: Metadata = {
     "Architecture services in Morocco", 
     "Services d'architecture au Maroc", 
     "خدمات الهندسة المعمارية في المغرب"
-  ]
-};
+  ]};

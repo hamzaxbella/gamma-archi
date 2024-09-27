@@ -1,6 +1,5 @@
 "use client";
-import { metadata } from "./metadata"; // Import the metadata here
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import { metadata } from "./metadata"; // Import the metadata
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import "./globals.css";
@@ -10,6 +9,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Loader from "@/components/loader/Loader";
 import CustomCursor from "@/components/customCursor/CustomCursor";
+import type { Metadata } from "next"; // Import Metadata type
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -29,9 +29,50 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <head>
-        <title>{String(metadata.title ?? "Default Title")}</title> {/* Ensure it's a string */}
-        <meta name="description" content={String(metadata.description ?? "Default description")} /> {/* Ensure it's a string */}
-        <link rel="icon" href="/favicon.ico" />
+        {/* Title and Description */}
+        <title>{String(metadata.title ?? "Default Title")}</title>
+        <meta
+          name="description"
+          content={String(metadata.description ?? "Default description")}
+        />
+
+        {/* Icons */}
+        {metadata.icons && (
+          Array.isArray(metadata.icons)
+            ? metadata.icons.map((icon, index) => {
+                if (typeof icon === 'string') {
+                  return <link key={index} rel="icon" href={icon} />;
+                }
+                if ('url' in icon) {
+                  // Convert URL to string if it's a URL object
+                  const iconUrl = typeof icon.url === 'string' ? icon.url : icon.url.toString();
+                  return (
+                    <link
+                      key={index}
+                      rel="icon"
+                      href={iconUrl} // Use the correct string type for href
+                      media={icon.media}
+                    />
+                  );
+                }
+                return null;
+              })
+            : typeof metadata.icons === 'string'
+            ? <link rel="icon" href={metadata.icons} />
+            : null
+        )}
+
+        {/* Keywords */}
+        {metadata.keywords && (
+          <meta
+            name="keywords"
+            content={
+              Array.isArray(metadata.keywords)
+                ? metadata.keywords.join(", ") // If it's an array, join it
+                : metadata.keywords // If it's a string, use it directly
+            }
+          />
+        )}
       </head>
       <body>
         {loaderFinished ? (
