@@ -7,11 +7,11 @@ export const metadata: Metadata = {
   icons: [
     {
       media: "(prefers-color-scheme: light)",
-      url: "./icondark.ico", // Use `url` instead of `href`
+      url: "/icondark.ico", // Use `url` instead of `href`
     },
     {
       media: "(prefers-color-scheme: dark)",
-      url: "./iconlight.ico",
+      url: "/iconlight.ico",
     },
   ],
   metadataBase: new URL("http://localhost:3000"),
