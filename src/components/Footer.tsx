@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
+    phone: '', 
     message: '',
   });
 
