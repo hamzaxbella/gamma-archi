@@ -7,6 +7,7 @@ import DynamicGallery from "@/components/DynamicGallery";
 import TruncatedText from "@/components/TruncatedText";
 import ScrollRestoration from '@/components/ScrollRestoration'
 import { title } from "process";
+import { error } from "console";
 export const revalidate = 30 // revalidate the data every 30 seconds
 
 

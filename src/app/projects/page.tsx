@@ -13,7 +13,6 @@ const page = () => {
         <section className="mt-24">
           <Projects/>
         </section>
-
         <section>
           <Map />
         </section>

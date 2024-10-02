@@ -25,17 +25,17 @@ const Footer: React.FC = () => {
     if (form.current) {
       try {
         const response = await emailjs.sendForm(
-          'service_pcdufpl',
-          'template_7e1kay9',
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
           form.current,
-          'tqwWb0TBJ_r5Y2cFV'
+          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
         );
         console.log('Email sent successfully:', response);
         alert('Votre message a été envoyé!');
         setFormData({ name: '', email: '', phone: '', message: '' }); // Clear form
-      } catch (error: unknown) { // Specify the type here
+      } catch (error: unknown) {
         if (error instanceof Error) {
-          console.error('Email sending failed:', error.message); // Use error.message instead of error.text
+          console.error('Email sending failed:', error.message);
           alert(`Votre message n'a pas pu être envoyé: (${error.message})`);
         } else {
           console.error('Email sending failed: Unknown error', error);
@@ -44,6 +44,7 @@ const Footer: React.FC = () => {
       }
     }
   };
+  
   
   return (
     <footer className="bg-thirdly overflow-hidden relative h-[100vh] md:h-[110vh] lg:h-[80vh]" style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}>
