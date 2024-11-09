@@ -9,7 +9,6 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Loader from "@/components/loader/Loader";
 import CustomCursor from "@/components/customCursor/CustomCursor";
-import type { Metadata } from "next"; // Import Metadata type
 
 interface RootLayoutProps {
   children: React.ReactNode;

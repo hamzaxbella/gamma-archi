@@ -61,9 +61,9 @@ const QuoteForm = () => {
 
   return (
     <section className=" max-container">
-      <PageTitle title="Demander un devis." />
+      <PageTitle title="Demander une consultation." />
       <p className="padding-x lg:px-0 text-xl my-6 font-thin  leading-8 tracking-wider">
-        Remplissez le formulaire ci-dessous pour obtenir un devis personnalisé
+        Remplissez le formulaire ci-dessous pour obtenir une consultation gratuite
         pour votre projet. Nous vous contacterons dans les plus brefs délais.
       </p>
       <form
@@ -187,22 +187,6 @@ const QuoteForm = () => {
               </label>
             </div>
 
-            <div className="custom-radio">
-              <label
-                htmlFor="institutionnel"
-                className="flex gap-6 text-xl font-thin tracking-wider"
-              >
-                <input
-                  type="radio"
-                  name="projectType"
-                  value="Institutionnel"
-                  onChange={handleChange}
-                  id="institutionnel"
-                />
-                <span></span>
-                <p>Institutionnel</p>
-              </label>
-            </div>
 
             <div className="custom-radio">
               <label
@@ -252,7 +236,7 @@ const QuoteForm = () => {
             handleChange={handleChange}
             value={formData.projectSize}
             name="projectSize"
-            label="taille/Portée du projet"
+            label="Surface km²..."
           />
         </div>
 

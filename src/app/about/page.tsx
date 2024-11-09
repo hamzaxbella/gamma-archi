@@ -1,4 +1,3 @@
-"use client"
 import About from '@/components/About'
 import CTA from '@/components/CTA'
 import FAQ from '@/components/FAQ'
@@ -7,9 +6,9 @@ import PageTitle from '@/components/PageTitle'
 import Services from '@/components/Services'
 import React from 'react'
 
-const page = () => {
+export const revalidate = 1
 
-    
+const page = () => {
     
   return (
     <main className="relative z-20 w-full h-full">

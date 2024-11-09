@@ -72,11 +72,13 @@ const Hero = () => {
             data-services
             className="content my-6 opacity-90 text-lg font-thin tracking-wider"
           >
-            <span>Villas | </span>
+
+
+            <span>Construction | </span>
             <span>Rénovation | </span>
-            <span>Interieur</span>
+            <span>Design intérieur</span>
           </div>
-          <Button label="Estimation Gratuite" primary path="/quote" />
+          <Button label="Consultation Gratuite" primary path="/quote" />
         </div>
           <Image
             className="w-[100em] md:w-[25em] lg:w-[30em]"

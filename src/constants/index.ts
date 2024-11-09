@@ -26,7 +26,7 @@ export const socialLinks = [
 export const HeroContent = {
     title : "KARA AYA ARCHITECTURE" ,
     description : "Concrétise vos projets d'architecture et de design intérieur avec expertise et passion",
-    service : "Villas | Rénovation | Interieur",
+    service : "Conseption | Rénovation | Design Interieur",
     trust : [
         "Plus de 30 ans d'expérience familiale.",
         "Gestion du temps, perfectionnisme, rapidité.",
@@ -34,26 +34,7 @@ export const HeroContent = {
 
     ]
 }
- 
-export const AllProjects = [
-    {title : 'Mise en valeur des infrastructures d’accueil au site archéologique de Lixus à Larache' , image : lexus , category : 'État'},
-    {title : 'Salles de classes préscolaires à la commune de Tanger - Asillah et Fahs Anjra' , image : index2 , category : 'État'},
-    {title : 'Etable collective des vaches laitières à Had el Gharbia' , image : etable , category : 'État'},
-    {title : 'CHEFCHAOUEN' , image : chefchaouen , category : 'Aminagement'},
-    {title : 'TETOUAN TOUABEL' , image : touabel , category : 'Aminagement'},
-    {title : 'Martil' , image : martil , category : 'Aminagement'},
-    {title : 'bab taza' , image : babtaza , category : 'Aminagement'},
 
-]
-
-export const AllServices = [
-    {title : 'Architecture' , description : 'Nous vous accompagnons de la conception initiale à la réalisation finale, en vous guidant à chaque étape du processus de construction, pour garantir que votre vision se transforme en réalité.' , images : ['img' , 'img' , 'img' , '...']},
-    {title : 'Interieur' , description : 'Nous orchestrons la disposition des espaces intérieurs en combinant décoration, design, ergonomie et architecture, pour créer des environnements harmonieux et fonctionnels, adaptés à vos besoins et à votre style.' , images : ['img' , 'img' , 'img' , '...']},
-    {title : 'Chantier' , description : "De l'étude de faisabilité et de la budgétisation, à la consultation des entreprises et au suivi des travaux, nous vous offrons un accompagnement complet pour assurer le succès de votre projet." , images : ['img' , 'img' , 'img' , '...']},
-    {title : 'Urbanism' , description : "De la planification stratégique à l'assistance à la décision, notre expertise couvre les études urbanistiques les plus complexes, offrant des solutions innovantes pour le développement urbain durable." , images : ['img' , 'img' , 'img' , '...']},
-    {title : 'BIM management' , description : "Nous intégrons la technologie BIM pour optimiser la planification, la conception, et la gestion de vos projets, assurant une coordination fluide entre tous les intervenants et une efficacité accrue tout au long du cycle de vie du bâtiment." , images : ['img' , 'img' , 'img' , '...']},
-    
-]
 
 export const FAQcontent = [
     {Question : "Pourquoi devriez-vous choisir notre entreprise ?" , Answer : "Avec plus de 30 ans d’expérience, Kara Aya Architecture allie technicité et créativité. Nous respectons les normes tout en adoptant une approche artistique. Notre priorité est le respect des délais, le perfectionnisme et la rapidité dans l'exécution de nos projets."} ,
@@ -66,5 +47,5 @@ export const FAQcontent = [
 ]
 
 export const Contact = [
-    {email : 'karaayaarchitecture@gmail.com' , phone : '05.39.93.54.39' , location : "35, rue Mossa Ibn Noussair, 1ᵉʳ étage, n° 1, 90020 Tanger, Maroc."}
+    {email : 'karaayaarchitecture@gmail.com' , phone : '05.39.93.54.39' , location : "35, rue Moussa Ibn Noussair, 1ᵉʳ étage, n° 1, 90020 Tanger, Maroc."}
 ]

@@ -55,3 +55,41 @@ export interface InputProps {
   value: any;
   name : string
 }
+
+
+export interface IntroDataTypes {
+  paragraph1 : string,
+  paragraph2 : string,
+  paragraph3 : string,
+  image1 : any,
+  image2 : any,
+  image3 : any
+}
+export interface AboutDataTypes {
+  paragraph1 : string,
+  paragraph2 : string,
+  paragraph3 : string,
+  image1 : any,
+  image2 : any,
+}
+
+export interface ServicesSwiperProps {
+  AllServices: ServiceSwiperProps[]; // Correct typing for an array of services
+}
+
+export interface ServiceSwiperProps {
+  title: string;
+  description: string;
+}
+
+
+// Define the structure for each FAQ item
+export interface FaqContentProps {
+  question: string;
+  response: string;
+}
+
+// Define the props for the FAQTemplate component
+export interface FaqsContentProps {
+  FAQcontent: FaqContentProps[]; // Array of FAQ items
+}

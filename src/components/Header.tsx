@@ -123,12 +123,12 @@ const Header = () => {
           </div>
         </div>
         <div className="w-full h-[80%] flex justify-center items-center gap-10">
-          <Image src={avatar} className="hidden z-30 lg:block object-cover"  alt="" width={350} />
+          <Image src={avatar} className="hidden z-30 lg:block object-cover h-[400px] object-bottom "  alt="" width={350} height={100} />
           <ul>
             {NavLinks.map((link, index) => (
               <div key={index} className="link-clip text-center lg:text-start lg:w-max">
                 <div className="link-holder " onClick={toggleMenu}>
-                  <Link className="text-4xl leading-loose lg:text-6xl uppercase " href={link.path}>{link.name}</Link>
+                  <Link className="text-4xl leading-loose lg:text-[40px] hover:text-yellow-400 transition-all duration-300 uppercase " href={link.path}>{link.name}</Link>
                 </div>
               </div>
             ))}

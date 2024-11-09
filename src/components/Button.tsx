@@ -1,15 +1,13 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 interface ButtonProps {
   label: string;
-  src?: string;
   primary: boolean;
   path: string;
 }
 
-const Button = ({ label, src, primary, path  }: ButtonProps) => {
+const Button = ({ label, primary, path  }: ButtonProps) => {
   return (
       <button
       data-button
