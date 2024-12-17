@@ -7,20 +7,24 @@ import check from "../../public/icons/check.svg";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { HeroContent } from "@/constants";
-import { animateHero } from "./animate";
 
 const Hero = () => {
-  const timeline = useRef(gsap.timeline());
   const heroRef = useRef(null);
 
-  useGSAP(
-    () => {
-      const tl = timeline.current;
+  useGSAP(() => {
+    const tl = gsap.timeline();
 
-      tl.add(animateHero() , '<');
-    },
-    { scope: heroRef }
-  );
+    tl.fromTo(heroRef.current, 
+      { opacity: 0, y: -50 }, 
+      { opacity: 1, y: 0, duration: 1, ease: "power2.out" })
+      .fromTo(".content", 
+      { opacity: 0, y: 20 }, 
+      { opacity: 1, y: 0, duration: 0.5, stagger: 0.2, ease: "power2.out" }, "<")
+      .fromTo(".text-holder", 
+      { scale: 0.8 }, 
+      { scale: 1, duration: 0.5, ease: "back.out(1.7)" }, "<");
+
+  }, { scope: heroRef });
 
   return (
     <section className="padding-x lg:px-0 relative max-container" ref={heroRef}>
@@ -40,7 +44,7 @@ const Hero = () => {
       </div>
       <div
         id="container"
-        className="my-6  flex  flex-col md:flex-row lg:items-center justify-between"
+        className="my-6 flex flex-col md:flex-row lg:items-center justify-between"
       >
         <div>
           <div>
@@ -72,19 +76,17 @@ const Hero = () => {
             data-services
             className="content my-6 opacity-90 text-lg font-thin tracking-wider"
           >
-
-
             <span>Construction | </span>
             <span>Rénovation | </span>
             <span>Design intérieur</span>
           </div>
           <Button label="Consultation Gratuite" primary path="/quote" />
         </div>
-          <Image
-            className="w-[100em] md:w-[25em] lg:w-[30em]"
-            src={mobileHero}
-            alt="hero image"
-          />
+        <Image
+          className="w-[100em] md:w-[25em] lg:w-[30em]"
+          src={mobileHero}
+          alt="hero image"
+        />
       </div>
       <div className="hidden lg:flex w-full justify-between">
         {HeroContent.trust.map((sentence, index) => (

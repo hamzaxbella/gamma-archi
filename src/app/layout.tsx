@@ -14,6 +14,7 @@ interface RootLayoutProps {
   children: React.ReactNode;
 }
 
+
 export default function RootLayout({ children }: RootLayoutProps) {
   const [loaderFinished, setLoaderFinished] = useState<boolean>(false);
   const [timeline, setTimeline] = useState<gsap.core.Timeline | null>(null);
