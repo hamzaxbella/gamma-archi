@@ -2,16 +2,16 @@
 import type { Metadata } from "next"; // Use Metadata type from Next.js
 
 export const metadata: Metadata = {
-  title: "Kara Aya Architecture",
-  description: "Atelier d'architecture à Tangier, Maroc...",
+  title: "zyllux architecture",
+  description: "Atelier d'architecture Maroc...",
   icons: [
     {
       media: "(prefers-color-scheme: light)",
-      url: "/icondark.ico", // Use `url` instead of `href`
+      url: "/logo.png", // Use `url` instead of `href`
     },
     {
       media: "(prefers-color-scheme: dark)",
-      url: "/iconlight.ico",
+      url: "/logo.png",
     },
   ],
   metadataBase: new URL("http://localhost:3000"),
