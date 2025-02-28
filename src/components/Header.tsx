@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { logo } from "../../public/icons";
 import Link from "next/link";
-import { avatar } from "../../public/images";
+import { avatar, desktopHero } from "../../public/images";
 import { NavLinks } from "@/constants";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -72,7 +72,7 @@ const Header = () => {
       <div className={`flex  mt-6 max-container ${isMenuSticky ? 'justify-end' : 'justify-between'} fade`}  >
         <div>
           <Link href="/">
-            <Image src={logo} alt="logo" />
+            <Image src={logo} width={69} height={69} alt="logo" />
           </Link>
         </div>
         <div
@@ -123,12 +123,12 @@ const Header = () => {
           </div>
         </div>
         <div className="w-full h-[80%] flex justify-center items-center gap-10">
-          <Image src={avatar} className="hidden z-30 lg:block object-cover h-[400px] object-bottom "  alt="" width={350} height={100} />
+          <Image src={desktopHero} className="hidden z-30 lg:block object-cover h-[500px] object-bottom "  alt="" width={450} height={100} />
           <ul>
             {NavLinks.map((link, index) => (
               <div key={index} className="link-clip text-center lg:text-start lg:w-max">
                 <div className="link-holder " onClick={toggleMenu}>
-                  <Link className="text-4xl leading-loose lg:text-[40px] hover:text-yellow-400 transition-all duration-300 uppercase " href={link.path}>{link.name}</Link>
+                  <Link className="text-4xl leading-loose lg:text-6xl hover:text-yellow-400 transition-all duration-300 uppercase " href={link.path}>{link.name}</Link>
                 </div>
               </div>
             ))}

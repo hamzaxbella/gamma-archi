@@ -92,8 +92,8 @@ const Footer: React.FC = () => {
             </form>
           </div>
           <div className="flex-1">
-            <a className="text-2xl lg:text-3xl break-all font-regular text-secondary underline" href="mailto:karaayaarchitecture@gmail.com?subject:Contact_from_your_website">
-              karaayaarchitecture@gmail.com
+            <a className="text-2xl lg:text-3xl break-all font-regular text-secondary underline" href="mailto:zyllux.agency@gmail.com?subject:Contact_from_your_website">
+              zyllux.agency@gmail.com
             </a>
             <ul className="mt-6">
               {socialLinks.map((link, index) => (
@@ -115,7 +115,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
         <p className="text-center py-6 text-xl font-normal text-secondary">
-          © {new Date().getFullYear()} Kara Aya Architecture. Tous droits réservés.
+          © {new Date().getFullYear()} zyllux digital. Tous droits réservés.
         </p>
       </div>
     </footer>

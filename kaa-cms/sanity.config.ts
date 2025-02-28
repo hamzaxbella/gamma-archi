@@ -6,8 +6,8 @@ import {schemaTypes} from './schemaTypes'
 export default defineConfig({
   name: 'default',
   title: 'kaa-cms',
-
-  projectId: '0sb2lfoo',
+  
+  projectId: 'rof9fknf',
   dataset: 'production',
 
   plugins: [structureTool(), visionTool()],

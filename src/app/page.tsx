@@ -6,7 +6,7 @@ import Map from "@/components/Map";
 import Projects from "@/components/Projects";
 import Services from "@/components/Services";
 
-export const revalidate = 30 // revalidate the data every 30 seconds
+export const revalidate = 1 // revalidate the data every 30 seconds
 
 
 const Page = () => {

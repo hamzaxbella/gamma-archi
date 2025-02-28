@@ -47,7 +47,7 @@ async function About() {
           />
 
           <h3 className="text-2xl leading-10 font-bold uppercase">
-            KAA - KARA AYA ARCHITECTURE
+            ZLX - ZYLLUX ARCHITECTURE
           </h3>
           <p className="text-2xl tracking-wider  font-thin leading-loose mt-4">
             {data[0].paragraph1}

@@ -56,7 +56,7 @@ const ServicesSwiper = ({AllServices} : ServicesSwiperProps) => {
             <SwiperSlide key={idx}>
               <div className="my-6">
                 <div className="mb-5">
-                  <p className="font-thin text-lg lg:text-2xl">KAA</p>
+                  <p className="font-thin text-lg lg:text-2xl">ZYLLUX</p>
                   <h2 className="font-semibold text-2xl lg:text-4xl tracking-wider text-secondary">
                     {service.title}
                   </h2>

@@ -1,8 +1,8 @@
 'use client'
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import Button from "./Button";
 import Image from "next/image";
-import { desktopHero, mobileHero } from "../../public/images";
+import { mobileHero } from "../../public/images";
 import check from "../../public/icons/check.svg";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -33,13 +33,13 @@ const Hero = () => {
           data-contact
           className="font-thin tracking-wider opacity-60 font-General text-xl"
         >
-          karaayaarchitecture@gmail.com
+          zyllux.agency@gmail.com
         </p>
         <p
           data-contact
           className="font-thin tracking-wider opacity-60 font-General mt-2 text-xl"
         >
-          05.39.93.54.39
+          06.54.18.85.81
         </p>
       </div>
       <div
@@ -53,7 +53,7 @@ const Hero = () => {
                 className="content text-4xl tracking-wider lg:text-6xl lg:max-w-[20ch] font-General uppercase font-semibold lg:font-semibold"
                 data-title
               >
-                kara aya 
+                zylux 
               </h1>
             </div>
             <div className="text-holder">
@@ -61,7 +61,7 @@ const Hero = () => {
                 className="content text-4xl tracking-wider lg:text-6xl lg:max-w-[20ch] font-General uppercase font-semibold lg:font-semibold"
                 data-title
               >
-                architecture
+                Architecture
               </h1>
             </div>
           </div>

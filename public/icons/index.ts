@@ -1,4 +1,4 @@
-import logo from './logo.svg'
+import logo from './logo.png'
 import calendar from './calendar.svg'
 import email from './email.svg'
 import leftArrow from './leftArrow.svg'
